@@ -309,7 +309,7 @@ describe('TextModelBinding test for editor', () => {
     {
       const savedSelection = binding['savedSelections'].get(editor)!;
       const absStart = createAbsolutePositionFromRelativePosition(savedSelection.start, doc)!;
-      const absEnd = createAbsolutePositionFromRelativePosition(savedSelection.end, doc)!;
+      const absEnd = createAbsolutePositionFromRelativePosition(savedSelections.end, doc)!;
       expect(absStart).toBeInstanceOf(AbsolutePosition);
       expect(absEnd).toBeInstanceOf(AbsolutePosition);
       // construct range
