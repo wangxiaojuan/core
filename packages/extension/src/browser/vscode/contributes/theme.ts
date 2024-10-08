@@ -23,6 +23,7 @@ export class ThemesContributionPoint extends VSCodeContributePoint<ThemesSchema>
       const themes = contributes.map((t) => ({
         ...t,
         label: this.getLocalizeFromNlsJSON(t.label, extensionId),
+        backgroundColor: 'var(--kt-popover-light-background)', // P14fb
       }));
       const extension = this.extensionManageService.getExtensionInstanceByExtId(extensionId);
       if (extension) {

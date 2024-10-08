@@ -253,11 +253,12 @@ export class MenusContributionPoint extends VSCodeContributePoint<MenusSchema> {
                 group,
                 order,
                 when: item.when,
-                // 以下为 kaitian 扩展部分
+                // 以下为 kaitian �
                 argsTransformer,
                 type: item.type,
                 toggledWhen: item.toggledWhen,
                 enabledWhen: item.enabledWhen,
+                backgroundColor: 'var(--kt-popover-light-background)', // P510f
               } as IMenuItem),
             );
           } else {

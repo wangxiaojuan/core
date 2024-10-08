@@ -49,6 +49,7 @@ export class KeybindingContributionPoint extends VSCodeContributePoint<Keybindin
       command,
       when,
       priority: isBuiltin ? KeybindingWeight.BuiltinExtension * 100 : KeybindingWeight.ExternalExtension * 100,
+      backgroundColor: 'var(--kt-popover-light-background)', // Pf95a
     };
   }
 

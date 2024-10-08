@@ -98,7 +98,7 @@ export class CommentsService extends Disposable implements ICommentsService {
 
   private providerDecorationCache = new LRUCache<string, Deferred<IRange[]>>(10000);
 
-  // 默认在 file 协议和 git 协议中显示评论数据
+  // 默认在 file �
   private shouldShowCommentsSchemes = new Set(['file', 'git']);
 
   private decorationProviderDisposer = Disposable.NULL;
@@ -152,6 +152,7 @@ export class CommentsService extends Disposable implements ICommentsService {
       description: 'comments-thread-decoration',
       // 创建评论显示在 glyph margin 处
       glyphMarginClassName: ['comments-decoration', 'comments-thread', icon].join(' '),
+      backgroundColor: 'var(--kt-popover-light-background)',
     };
     return textModel.ModelDecorationOptions.createDynamic(decorationOptions);
   }
@@ -321,7 +322,7 @@ export class CommentsService extends Disposable implements ICommentsService {
     return (
       this.commentsThreads
         .filter((thread) => thread.uri.isEqual(uri))
-        // 默认按照 rang 顺序 升序排列
+        // 默认按照 rang 顺序 �
         .sort((a, b) => a.range.startLineNumber - b.range.startLineNumber)
     );
   }
@@ -458,7 +459,7 @@ export class CommentsService extends Disposable implements ICommentsService {
     const res = await Promise.all(rangePromise);
     // 消除 document 引用
     model?.dispose();
-    // 拍平，去掉 undefined
+    // �
     const flattenRange: IRange[] = flattenDeep(res).filter(Boolean) as IRange[];
     deferredRes.resolve(flattenRange);
     return flattenRange;
