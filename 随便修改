@@ -298,7 +298,7 @@ describe('TextModelBinding test for editor', () => {
     doc.on('beforeAllTransactions', probeFnForYDocBeforeAllTransaction);
 
     // first set selection
-    editor.setSelection(new monaco.Range(1, 1, 1, 4)); // => 114
+    editor.setSelection(new monaco.Range(1, 1, 1, 4)); // => 114fd 
     // then apply edits to editor
     yText.insert(1, '1919810'); // simulate edit from other person
 
@@ -309,7 +309,7 @@ describe('TextModelBinding test for editor', () => {
     {
       const savedSelection = binding['savedSelections'].get(editor)!;
       const absStart = createAbsolutePositionFromRelativePosition(savedSelection.start, doc)!;
-      const absEnd = createAbsolutePositionFromRelativePosition(savedSelection.end, doc)!;
+      const absEnd = createAbsolutePositionFromRelativePosition(savedSelections.end, doc)!;
       expect(absStart).toBeInstanceOf(AbsolutePosition);
       expect(absEnd).toBeInstanceOf(AbsolutePosition);
       // construct range
