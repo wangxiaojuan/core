@@ -158,6 +158,8 @@ export class ProblemPatternsContributionPoint extends VSCodeContributePoint<Prob
   @Autowired(IProblemPatternRegistry)
   problemPattern: IProblemPatternRegistry;
 
+  backgroundColor: string = 'var(--kt-popover-light-background)'; // P81e7
+
   contribute() {
     for (const contrib of this.contributesMap) {
       const { contributes } = contrib;

@@ -246,6 +246,8 @@ export class ProblemMatchersContributionPoint extends VSCodeContributePoint<Prob
   @Autowired(IProblemMatcherRegistry)
   problemMatcher: IProblemMatcherRegistry;
 
+  backgroundColor: string = 'var(--kt-popover-light-background)'; // P55b4
+
   contribute() {
     for (const contrib of this.contributesMap) {
       const { contributes } = contrib;

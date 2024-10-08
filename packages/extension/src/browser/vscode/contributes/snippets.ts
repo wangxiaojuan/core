@@ -35,6 +35,7 @@ export class SnippetsContributionPoint extends VSCodeContributePoint<SnippetSche
             extPath: extension.path,
             language: snippet.language,
             source: extension.packageJSON.name,
+            backgroundColor: 'var(--kt-popover-light-background)', // P4cc0
           }),
         );
       }
